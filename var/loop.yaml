@@ -1,0 +1,11 @@
+---
+  - hosts: pft
+    sudo: yes
+    vars_files:
+     - vars.yaml
+    tasks:
+      - name: install nginx on server
+        action: user name={{ item }} state=present
+        with_items:
+          - user1
+          - user22

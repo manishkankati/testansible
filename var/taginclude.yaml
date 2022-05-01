@@ -1,0 +1,5 @@
+---
+  - hosts: pft
+    sudo: yes
+    tasks:
+      - include: includedockertask.yaml 

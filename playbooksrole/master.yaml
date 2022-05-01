@@ -1,0 +1,5 @@
+---
+  - hosts: pft
+    sudo: yes
+    roles:
+     - nginx        

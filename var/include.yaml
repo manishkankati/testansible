@@ -1,0 +1,10 @@
+---
+  - hosts: pft
+    sudo: yes
+    vars_files:
+     - vars.yaml
+    tasks:
+      - include: includetask.yaml
+    handlers:    
+      - name: nginx service
+        action: service name=nginx state=restarted

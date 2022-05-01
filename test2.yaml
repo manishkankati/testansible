@@ -1,0 +1,12 @@
+---
+  - hosts: pft
+    sudo: yes
+    tasks:
+      - name: install apache2
+        apt: name=apache2 update_cache=yes state=latest
+        tags:
+         - paaid1
+      - name: install apache2 centos7
+        action: yum  name=apache2 update_cache=yes state=latest
+        tags:
+         - passid2

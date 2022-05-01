@@ -1,0 +1,7 @@
+- name: install nginx on server
+  action: yum name=nginx  state=installed
+  notify: nginx service
+- name: wait for the port available
+  wait_for:
+   port: 81
+   state: started   

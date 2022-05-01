@@ -1,0 +1,12 @@
+---
+  - hosts: pft
+    sudo: yes
+    tasks:
+      - name: Install Apache on CentOS  Server
+        yum: name=git  state=present
+        become: yes
+        when: ansible_os_family == "RedHat"
+      - name: Install Apache on Ubuntu Server
+        apt:name=git state=present
+        become: yes
+        when: ansible_os_family == "Debian"

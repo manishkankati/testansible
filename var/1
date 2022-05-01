@@ -1,0 +1,14 @@
+---
+  - hosts: pft
+    sudo: yes
+    vars_files:
+     - vars.yaml
+    tasks:
+      - name: install nginx on server
+        action: yum name='{{ pkgname}}' state=installed
+        run_once: true
+        delegate_to: 10.182.0.4
+        notify: nginx service
+    handlers:
+      - name: nginx service
+        action: service name=nginx state=restarted

@@ -1,0 +1,7 @@
+---
+  - hosts: pft
+    sudo: yes
+    tasks:
+      - name: Copy in the template
+        shell: docker cp 88e8e6f2c8d0:/usr/local/tomcat/webapps/docker-war-demo.war /home/mounidevops0724/docker/
+        become: yes

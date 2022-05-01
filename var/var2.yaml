@@ -1,0 +1,8 @@
+---
+  - hosts: pft
+    sudo: yes
+    vars_files:
+     - vars.yaml
+    tasks:
+      - name: install nginx on server
+        action: yum name='{{ pkgname}}' state=installed

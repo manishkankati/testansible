@@ -1,0 +1,3 @@
+---
+  - hosts: pft
+    sudo: yes

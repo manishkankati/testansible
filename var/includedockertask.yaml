@@ -1,0 +1,16 @@
+- name: Copy in the template
+  shell: docker cp 88e8e6f2c8d0:/usr/local/tomcat/webapps/docker-war-demo.war /home/mounidevops0724/docker/
+  become: yes
+  tags:
+   - paaid1
+        
+- name: Copy in the template
+  shell: docker cp 88e8e6f2c8d0:/usr/local/tomcat/conf/tomcat-users.xml /home/mounidevops0724/docker/
+  become: yes
+  tags:
+   - paaid1
+- name: Copy in the template secondid
+  shell: docker cp 694a095d10a4:/opt/jboss/wildfly/jboss-modules.jar /home/mounidevops0724/file/
+  become: yes
+  tags:
+   - passid2

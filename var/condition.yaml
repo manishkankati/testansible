@@ -1,0 +1,12 @@
+---
+  - hosts: pft
+    sudo: yes
+    vars_files:
+     - vars.yaml
+    tasks:
+      - name: install nginx on server debian
+        apt: name='{{ pkgname}}' state=installed
+        when: ansible_os_family == "Debian"
+      - name: install nginx on server on centos
+        yum: name='{{ pkgname}}' state=installed
+        when: ansible_os_family == "RedHat"
